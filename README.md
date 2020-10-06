@@ -40,7 +40,7 @@ Below is a picture of how the robot moved through the building and placing marks
 
 ![img1](Figur1.png)
 ![img2](Figur2.png)
-![img3](Figur%203.png)
+![img3](Figur3.png)
 
 
 ## e)
