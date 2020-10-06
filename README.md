@@ -35,18 +35,18 @@ In other words:
 Stop when there is 4 done marks in each directions, as 4 done marks in all directions means that there is no more unexplored tiles left. When there is a direction with no marks, prioritize trying to move in this direction. When trying to move in a markless (unexplored) direction, if there is a wall, place a done mark for that direction. For a succesful move, read if all 3 marks are present at the source direction and continue without placing a mark, if read showed a single origin mark at source direction place a done mark and move back, otherwise place origin mark. If there are no longer any markless (unexplored) directions left for the current tile and there is still origin marks left, turn to one of the origin marks place a done mark and move there.
 At some point the robot will have explored all paths when finding a tile where it reads 4 done marks.
 
-## d)
+## d) Functional test
 Below is a picture of how the robot moved through the building and placing marks. The number represents the step number / or in which order the mark was placed.
 
-![img1](Figur1.png)
+![img1](Assignment1/Figur1.png)
 ![img2](Figur2.png)
-![img3](Figur%203.png)
+![img3](Figur3.png)
 
 
-## e)
+## e) Generic solution
 It works for any building, as the algorithm ensures that no path is getting closed or marked as done unless all paths in that direction is explored. Ensuring a direction has been fully explored is ensured by prioritizing unmarked directions and placing origin marks instead of done. This means that a path is only marked as done when it is either a wall or moving backwards on an origin mark. Circular floors is handled by the question mark logic, this ensures that floors with circular design can also be handled by the algorithm.
 
-## f)
+## f) Runtime analysis
 In the worst case scenario for a tile, it could get entered 8 times. 1 time for each direction first time, and 1 time for each direction entered a second time. The worst case scenario is very unlikely and required a lot of circularity.
 
 # References:
