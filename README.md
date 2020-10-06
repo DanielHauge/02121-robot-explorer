@@ -38,7 +38,7 @@ At some point the robot will have explored all paths when finding a tile where i
 ## d) Functional test
 Below is a picture of how the robot moved through the building and placing marks. The number represents the step number / or in which order the mark was placed.
 
-![img1](Assignment1/Figur1.png)
+![img1](Figur1.png)
 ![img2](Figur2.png)
 ![img3](Figur3.png)
 
