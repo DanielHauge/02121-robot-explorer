@@ -2,6 +2,7 @@
 - Course: 02121
 - Date: 8/10/2020
 - Group: 13
+- Repo: https://github.com/DanielHauge/02121-robot-explorer
 
 The task and descriptions are vague. Hence we need to specify more precisly.
 
@@ -15,11 +16,12 @@ Completely explored meaning to have been explored all squares, according to what
 
 ## b) Marks
 
-- done mark, indicating everything has been explored in that direction.
-- origin mark, indication the robot came from this direction.
+- Done mark, indicating everything has been explored in that direction.
+- Origin mark, indication the robot came from this direction.
 - Question mark, indicating that the robot moved here but went back.
 
 ## c) Strategy
+The strategy is adopting a similar strategy to DFS, Depth-first search. By traversing down unexplored paths first, by going deep very fast. Then going backwards when a path is no deeper, by the origin mark. 
 The robot is to follow the algorithm:
 
 - while(direction without done mark exists)
@@ -32,11 +34,12 @@ The robot is to follow the algorithm:
   - if (question mark exists) => Place done and move that direction.
 
 In other words:
+
 Stop when there is 4 done marks in each directions, as 4 done marks in all directions means that there is no more unexplored tiles left. When there is a direction with no marks, prioritize trying to move in this direction. When trying to move in a markless (unexplored) direction, if there is a wall, place a done mark for that direction. For a succesful move, read if all 3 marks are present at the source direction and continue without placing a mark, if read showed a single origin mark at source direction place a done mark and move back, otherwise place origin mark. If there are no longer any markless (unexplored) directions left for the current tile and there is still origin marks left, turn to one of the origin marks place a done mark and move there.
 At some point the robot will have explored all paths when finding a tile where it reads 4 done marks.
 
 ## d) Functional test
-Below is a picture of how the robot moved through the building and placing marks. The number represents the step number / or in which order the mark was placed.
+Below is a picture of how the robot moved through the building and placing marks. The number represents the step number / or in which order the mark was placed. O=(Origin), D=(Done), ?=(Question)
 
 ![img1](Figur1.png)
 ![img2](Figur2.png)
@@ -47,7 +50,7 @@ Below is a picture of how the robot moved through the building and placing marks
 It works for any building, as the algorithm ensures that no path is getting closed or marked as done unless all paths in that direction is explored. Ensuring a direction has been fully explored is ensured by prioritizing unmarked directions and placing origin marks instead of done. This means that a path is only marked as done when it is either a wall or moving backwards on an origin mark. Circular floors is handled by the question mark logic, this ensures that floors with circular design can also be handled by the algorithm.
 
 ## f) Runtime analysis
-In the worst case scenario for a tile, it could get entered 8 times. 1 time for each direction first time, and 1 time for each direction entered a second time. The worst case scenario is very unlikely and required a lot of circularity.
+In the worst case scenario for a tile, it could get entered 8 times. 1 time for each direction first time, and 1 time for each direction entered a second time. The worst case scenario is very unlikely and required a lot of circularity. However worst case scenario is very unlikely, and even more unlikely to occur more than once.
 
 # References:
 - [Task description from Learn](https://learn.inside.dtu.dk/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=44473&db=15162&grpid=53419)
