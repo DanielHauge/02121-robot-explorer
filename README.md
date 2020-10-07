@@ -1,7 +1,7 @@
 # Introduktion til ingeniørarbejde - Efterår 2020
 - Course: 02121
 - Date: 8/10/2020
-- Group: 13
+- Group: 13 (Daniel F. Hauge)
 - Repo: https://github.com/DanielHauge/02121-robot-explorer
 
 The task and descriptions are vague. Hence we need to specify more precisly.
